@@ -14,6 +14,8 @@ navbar.querySelectorAll("a").forEach((link) =>
 // Any element with data-sprite="path1 path2" tries each path in order.
 // - <img>: swaps in the first file that loads (otherwise keeps its placeholder src)
 // - anything else (icon slot): replaces the temporary icon with the PNG
+const PX = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--px")) || 2;
+
 function loadSprite(el) {
   const urls = el.dataset.sprite.trim().split(/\s+/);
   let i = 0;
@@ -31,6 +33,9 @@ function loadSprite(el) {
         img.className = "sprite";
         img.alt = "";
         img.src = url;
+        // draw every sprite pixel as exactly PX x PX screen pixels so it matches the UI grid
+        img.style.width = probe.naturalWidth * PX + "px";
+        img.style.height = probe.naturalHeight * PX + "px";
         el.textContent = "";
         el.appendChild(img);
         el.classList.add("has-sprite");

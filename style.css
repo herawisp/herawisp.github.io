@@ -15,6 +15,7 @@
   --c-green: #94f56b;
 
   --outline: var(--ink);   /* ring color around boxes (flipped inside dark sections) */
+  --px: 2px;   /* 1 sprite pixel on screen. All UI steps/borders are multiples of this */
   --gap: 12px;
 
   --font: "Pixelify Sans", sans-serif;
@@ -150,7 +151,7 @@ img { max-width: 100%; display: block; }
 .box.dark   { --fill: #1b1b1b; color: var(--cream); }
 
 .bar {
-  --n: 3px;
+  --n: 4px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -168,7 +169,7 @@ img { max-width: 100%; display: block; }
   gap: 0.6rem;
   font-family: var(--font-px);
   font-weight: 700;
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   text-transform: uppercase;
   letter-spacing: 0.03em;
   line-height: 1.2;
@@ -219,11 +220,12 @@ a.sq:hover { background: var(--accent); }
   line-height: 1;
 }
 .ico.big { width: 2rem; height: 2rem; font-size: 1.4rem; }
-.ico .sprite { width: 100%; height: 100%; object-fit: contain; image-rendering: pixelated; }
+.ico .sprite { max-width: none; image-rendering: pixelated; }  /* size is set from the PNG's native size x --px */
+.ico.has-sprite, .ico.big.has-sprite { width: auto; height: auto; }
 
 /* ===== BUTTONS ===== */
 .btn {
-  --n: 3px;
+  --n: 4px;
   --line: var(--ink);
   --fill: var(--ink);
   display: inline-flex;
@@ -278,7 +280,8 @@ a.sq:hover { background: var(--accent); }
   margin: 0 0.9em;
   font-style: normal;
 }
-.spark .sprite { width: 100%; height: 100%; object-fit: contain; image-rendering: pixelated; }
+.spark .sprite { max-width: none; image-rendering: pixelated; }
+.spark.has-sprite { width: auto; height: auto; }
 @keyframes marquee { to { transform: translateX(-50%); } }
 
 .bento {
@@ -314,7 +317,7 @@ a.sq:hover { background: var(--accent); }
 
 .socials { display: flex; gap: 0.7rem; }
 .socials a {
-  --n: 3px;
+  --n: 4px;
   width: 2.9rem; height: 2.9rem;
   display: grid; place-items: center;
   background: var(--ink);
@@ -329,6 +332,7 @@ a.sq:hover { background: var(--accent); }
   transition: background 0.12s, color 0.12s, transform 0.12s;
 }
 .socials a .ico { width: 1.5rem; height: 1.5rem; font-size: 1.3rem; }
+.socials a .ico.has-sprite { width: auto; height: auto; }
 .socials a:hover { background: var(--accent); color: var(--ink); transform: translate(-2px, -2px); }
 
 /* ===== SECTIONS (bands) ===== */
@@ -360,7 +364,7 @@ a.sq:hover { background: var(--accent); }
 .chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
 .chips span {
   padding: 0.25rem 0.7rem;
-  border: 3px solid currentColor;
+  border: 2px solid currentColor;
   font-family: var(--font-px);
   font-size: 0.7rem;
   font-weight: 700;
