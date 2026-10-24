@@ -108,3 +108,13 @@ const revealObserver = new IntersectionObserver(
   { threshold: 0.12 }
 );
 document.querySelectorAll(".reveal").forEach((el) => revealObserver.observe(el));
+
+// ===== Contact form: opens your email app with the message filled in =====
+const contactForm = document.getElementById("contactForm");
+contactForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const f = new FormData(contactForm);
+  const body = `${f.get("message")}\n\nFrom: ${f.get("name")}\nEmail: ${f.get("email")}\nPhone: ${f.get("phone") || "-"}`;
+  const subject = f.get("subject") || "Portfolio message";
+  window.location.href = `mailto:${contactForm.dataset.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+});
