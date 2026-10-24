@@ -8,14 +8,13 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Poppins:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <canvas id="bg"></canvas>
 
-  <!-- ===== NAV ===== -->
+  <!-- ===== NAV (unchanged) ===== -->
   <header class="header">
     <a href="#home" class="logo">Dicco</a>
     <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu"><i class="fa-solid fa-bars"></i></button>
@@ -29,190 +28,249 @@
   </header>
 
   <main>
-    <!-- ===== HOME ===== -->
+    <!-- ===== HOME: profile box on the left, 4 project boxes on the right ===== -->
     <section class="home" id="home">
-      <div class="hero-img-wrap">
-        <div class="orbit"><span></span><span></span><span></span></div>
-        <!-- Put your photo or pixel-art avatar at images/profile.jpg -->
-        <img src="images/profile.jpg" alt="Photo of Dicco" class="hero-img">
+
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+          <span>Unity Developer ✦ Game Developer ✦ Pixel Artist ✦ Open for Unity internships ✦ </span>
+          <span>Unity Developer ✦ Game Developer ✦ Pixel Artist ✦ Open for Unity internships ✦ </span>
+        </div>
       </div>
 
-      <div class="hero-text">
-        <h1>Hi! I'm <span class="accent">Dicco</span></h1>
-        <h2>I'm a <span class="accent" id="typed"></span><span class="cursor">|</span></h2>
-        <p>A Computer Science student at BINUS University who builds games in Unity. Currently looking for a Unity Developer internship.</p>
+      <div class="bento">
 
-        <div class="socials">
-          <a href="https://github.com/herawisp" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-          <a href="https://herawisp.itch.io" target="_blank" rel="noopener" aria-label="itch.io"><i class="fa-brands fa-itch-io"></i></a>
-          <a href="https://www.linkedin.com/in/YOUR-LINKEDIN" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-          <a href="mailto:YOUR_EMAIL@example.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
-        </div>
+        <!-- LEFT: profile + description -->
+        <article class="box orange about">
+          <div class="bar"><h3>About Me</h3><span class="sq">★</span></div>
+          <div class="box-body">
+            <!-- Put your photo or pixel-art avatar at images/profile.jpg -->
+            <img src="images/profile.jpg" alt="Photo of Dicco" class="hero-img">
 
-        <a href="#projects" class="btn">View My Projects</a>
+            <h1>Hi! I'm <span class="hl">Dicco</span></h1>
+            <h2>I'm a <span class="hl"><span id="typed"></span><span class="cursor">|</span></span></h2>
+            <p>A Computer Science student at BINUS University who builds games in Unity. Currently looking for a Unity Developer internship.</p>
+
+            <div class="socials">
+              <a href="https://github.com/herawisp" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+              <a href="https://herawisp.itch.io" target="_blank" rel="noopener" aria-label="itch.io"><i class="fa-brands fa-itch-io"></i></a>
+              <a href="https://www.linkedin.com/in/YOUR-LINKEDIN" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+              <a href="mailto:YOUR_EMAIL@example.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+
+            <a href="#contact" class="btn">Get In Touch</a>
+          </div>
+        </article>
+
+        <!-- RIGHT: 4 projects -->
+        <article class="box cream project">
+          <div class="bar">
+            <h3>Gecko Of All Time</h3>
+            <a class="sq" href="https://exaltedartix.itch.io/gecko-of-all-time" target="_blank" rel="noopener" aria-label="Play Gecko Of All Time">↗</a>
+          </div>
+          <div class="box-body">
+            <img class="shot" src="https://raw.githubusercontent.com/herawisp/herawisp/main/GIF/Final/GeckoOfAllTime_Polished.gif" alt="Gecko Of All Time gameplay">
+            <p>Roguelike shoot 'em up. Control a gecko and survive endless waves of monsters.</p>
+            <div class="card-buttons">
+              <a href="https://github.com/jvn-tix/GeckoOfAllTime" target="_blank" rel="noopener"><img class="pixel-btn" src="https://raw.githubusercontent.com/herawisp/herawisp/main/Button/github_icon_button.gif" alt="Documentation"></a>
+              <a href="https://exaltedartix.itch.io/gecko-of-all-time" target="_blank" rel="noopener"><img class="pixel-btn" src="https://raw.githubusercontent.com/herawisp/herawisp/main/Button/itchio_icon_button.gif" alt="Play on itch.io"></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="box black project">
+          <div class="bar">
+            <h3>B00!KIES</h3>
+            <a class="sq" href="https://herawisp.itch.io/bookies" target="_blank" rel="noopener" aria-label="Play B00!KIES">↗</a>
+          </div>
+          <div class="box-body">
+            <img class="shot" src="https://raw.githubusercontent.com/herawisp/herawisp/main/GIF/B00!KIES_LowQuality.gif" alt="B00!KIES gameplay">
+            <p>2D pixel-art incremental game. Shoot cookies, feed hungry ghosts, buy upgrades.</p>
+            <div class="card-buttons">
+              <a href="https://github.com/herawisp/B00KIES" target="_blank" rel="noopener"><img class="pixel-btn" src="https://raw.githubusercontent.com/herawisp/herawisp/main/Button/github_icon_button.gif" alt="Documentation"></a>
+              <a href="https://herawisp.itch.io/bookies" target="_blank" rel="noopener"><img class="pixel-btn" src="https://raw.githubusercontent.com/herawisp/herawisp/main/Button/itchio_icon_button.gif" alt="Play on itch.io"></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="box black project">
+          <div class="bar">
+            <h3>Flying Butter</h3>
+            <a class="sq" href="https://herawisp.itch.io/flying-butter" target="_blank" rel="noopener" aria-label="Play Flying Butter">↗</a>
+          </div>
+          <div class="box-body">
+            <img class="shot" src="https://raw.githubusercontent.com/herawisp/herawisp/main/GIF/Final/FlyingButter_Polished.gif" alt="Flying Butter gameplay">
+            <p>Pixel-art auto-battler dungeon crawler. Build a team of butterflies with synergistic abilities.</p>
+            <div class="card-buttons">
+              <a href="https://github.com/herawisp/boid-attack" target="_blank" rel="noopener"><img class="pixel-btn" src="https://raw.githubusercontent.com/herawisp/herawisp/main/Button/github_icon_button.gif" alt="Documentation"></a>
+              <a href="https://herawisp.itch.io/flying-butter" target="_blank" rel="noopener"><img class="pixel-btn" src="https://raw.githubusercontent.com/herawisp/herawisp/main/Button/itchio_icon_button.gif" alt="Play on itch.io"></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="box cream project">
+          <div class="bar">
+            <h3>Pixel Mines</h3>
+            <a class="sq" href="https://herawisp.itch.io/pixel-mines" target="_blank" rel="noopener" aria-label="Play Pixel Mines">↗</a>
+          </div>
+          <div class="box-body">
+            <img class="shot" src="https://raw.githubusercontent.com/herawisp/herawisp/main/GIF/Final/PixelMines_Polished.gif" alt="Pixel Mines gameplay">
+            <p>Procedurally generated cave mining game. Sole programmer and artist.</p>
+            <div class="card-buttons">
+              <a href="https://github.com/herawisp/pixel-mines" target="_blank" rel="noopener"><img class="pixel-btn" src="https://raw.githubusercontent.com/herawisp/herawisp/main/Button/github_icon_button.gif" alt="Documentation"></a>
+              <a href="https://herawisp.itch.io/pixel-mines" target="_blank" rel="noopener"><img class="pixel-btn" src="https://raw.githubusercontent.com/herawisp/herawisp/main/Button/itchio_icon_button.gif" alt="Play on itch.io"></a>
+            </div>
+          </div>
+        </article>
+
       </div>
     </section>
 
-    <!-- ===== PROJECTS ===== -->
+    <!-- ===== MORE PROJECTS ===== -->
     <section class="section" id="projects">
-      <h2 class="heading">My <span class="accent">Projects</span></h2>
+      <h2 class="heading">More Projects</h2>
 
       <div class="grid">
-        <article class="card reveal">
-          <img class="card-img" src="https://raw.githubusercontent.com/herawisp/herawisp/main/GIF/Final/GeckoOfAllTime_Polished.gif" alt="Gecko Of All Time gameplay">
-          <h3>Gecko Of All Time</h3>
-          <p>A roguelike shoot 'em up where you control a gecko battling continuous waves of monsters, aiming to survive as long as possible.</p>
-          <div class="card-buttons">
-            <a href="https://github.com/jvn-tix/GeckoOfAllTime" target="_blank" rel="noopener"><img class="pixel-btn" src="https://raw.githubusercontent.com/herawisp/herawisp/main/Button/github_icon_button.gif" alt="Documentation"></a>
-            <a href="https://exaltedartix.itch.io/gecko-of-all-time" target="_blank" rel="noopener"><img class="pixel-btn" src="https://raw.githubusercontent.com/herawisp/herawisp/main/Button/itchio_icon_button.gif" alt="Play on itch.io"></a>
+        <article class="box cream reveal">
+          <div class="bar"><h3>Wall of Doom</h3><a class="sq" href="https://herawisp.itch.io/wall-of-doom" target="_blank" rel="noopener" aria-label="Play Wall of Doom">↗</a></div>
+          <div class="box-body">
+            <p>A Hole in the Wall-style game where you race to slip through the gap in each oncoming wall before it knocks you off the platform.</p>
+            <div class="card-buttons"><a href="https://herawisp.itch.io/wall-of-doom" target="_blank" rel="noopener"><img class="pixel-btn" src="https://raw.githubusercontent.com/herawisp/herawisp/main/Button/itchio_icon_button.gif" alt="Play on itch.io"></a></div>
           </div>
         </article>
 
-        <article class="card reveal">
-          <img class="card-img" src="https://raw.githubusercontent.com/herawisp/herawisp/main/GIF/B00!KIES_LowQuality.gif" alt="B00!KIES gameplay">
-          <h3>B00!KIES</h3>
-          <p>A 2D pixel-art incremental game where you shoot cookies to turn them into B00!KIES for hungry ghosts, earning coins to buy upgrades and unlock new cookie variants.</p>
-          <div class="card-buttons">
-            <a href="https://github.com/herawisp/B00KIES" target="_blank" rel="noopener"><img class="pixel-btn" src="https://raw.githubusercontent.com/herawisp/herawisp/main/Button/github_icon_button.gif" alt="Documentation"></a>
-            <a href="https://herawisp.itch.io/bookies" target="_blank" rel="noopener"><img class="pixel-btn" src="https://raw.githubusercontent.com/herawisp/herawisp/main/Button/itchio_icon_button.gif" alt="Play on itch.io"></a>
+        <article class="box black reveal">
+          <div class="bar"><h3>Hop Till You Drop</h3><a class="sq" href="https://herawisp.itch.io/hop-till-you-drop" target="_blank" rel="noopener" aria-label="Play Hop Till You Drop">↗</a></div>
+          <div class="box-body">
+            <p>An arcade dodging game where you leap left or right to avoid a constant barrage of incoming asteroids and survive as long as you can.</p>
+            <div class="card-buttons"><a href="https://herawisp.itch.io/hop-till-you-drop" target="_blank" rel="noopener"><img class="pixel-btn" src="https://raw.githubusercontent.com/herawisp/herawisp/main/Button/itchio_icon_button.gif" alt="Play on itch.io"></a></div>
           </div>
         </article>
 
-        <article class="card reveal">
-          <img class="card-img" src="https://raw.githubusercontent.com/herawisp/herawisp/main/GIF/Final/FlyingButter_Polished.gif" alt="Flying Butter gameplay">
-          <h3>Flying Butter</h3>
-          <p>A 2D pixel-art auto-battler dungeon crawler where you clear procedurally regenerated floors and gamble for card packs to build a team of butterflies with synergistic abilities.</p>
-          <div class="card-buttons">
-            <a href="https://github.com/herawisp/boid-attack" target="_blank" rel="noopener"><img class="pixel-btn" src="https://raw.githubusercontent.com/herawisp/herawisp/main/Button/github_icon_button.gif" alt="Documentation"></a>
-            <a href="https://herawisp.itch.io/flying-butter" target="_blank" rel="noopener"><img class="pixel-btn" src="https://raw.githubusercontent.com/herawisp/herawisp/main/Button/itchio_icon_button.gif" alt="Play on itch.io"></a>
+        <article class="box cream reveal">
+          <div class="bar"><h3>Troop Battler</h3><a class="sq" href="#" target="_blank" rel="noopener" aria-label="Play Troop Battler">↗</a></div>
+          <div class="box-body">
+            <p>A lane-based Roblox strategy game where you deploy troops into your chosen lane, and each round you pick a card whose perks help you but also strengthen your opponent.</p>
+            <!-- TODO: replace both # links in this box with the real Roblox game link -->
+            <div class="card-buttons"><a class="btn small" href="#" target="_blank" rel="noopener">Play on Roblox</a></div>
           </div>
         </article>
 
-        <article class="card reveal">
-          <img class="card-img" src="https://raw.githubusercontent.com/herawisp/herawisp/main/GIF/Final/PixelMines_Polished.gif" alt="Pixel Mines gameplay">
-          <h3>Pixel Mines</h3>
-          <p>A 2D procedurally generated cave exploration and mining game. Sole programmer and artist, handling everything from procedural generation to character animations.</p>
-          <div class="card-buttons">
-            <a href="https://github.com/herawisp/pixel-mines" target="_blank" rel="noopener"><img class="pixel-btn" src="https://raw.githubusercontent.com/herawisp/herawisp/main/Button/github_icon_button.gif" alt="Documentation"></a>
-            <a href="https://herawisp.itch.io/pixel-mines" target="_blank" rel="noopener"><img class="pixel-btn" src="https://raw.githubusercontent.com/herawisp/herawisp/main/Button/itchio_icon_button.gif" alt="Play on itch.io"></a>
+        <article class="box black reveal">
+          <div class="bar"><h3>Island Survival</h3><a class="sq" href="#" target="_blank" rel="noopener" aria-label="Play Island Survival">↗</a></div>
+          <div class="box-body">
+            <p>A Roblox survival game set on an island, where you gather resources and fight off waves of zombies to make it through each day.</p>
+            <!-- TODO: replace both # links in this box with the real Roblox game link -->
+            <div class="card-buttons"><a class="btn small" href="#" target="_blank" rel="noopener">Play on Roblox</a></div>
           </div>
         </article>
-      </div>
 
-      <h3 class="subheading">Other Projects</h3>
-      <div class="grid small">
-        <article class="card reveal">
-          <h3>Wall of Doom</h3>
-          <p>A Hole in the Wall-style game where you race to slip through the gap in each oncoming wall before it knocks you off the platform.</p>
-          <div class="card-buttons"><a href="https://herawisp.itch.io/wall-of-doom" target="_blank" rel="noopener"><img class="pixel-btn" src="https://raw.githubusercontent.com/herawisp/herawisp/main/Button/itchio_icon_button.gif" alt="Play on itch.io"></a></div>
-        </article>
-
-        <article class="card reveal">
-          <h3>Hop Till You Drop</h3>
-          <p>An arcade dodging game where you leap left or right to avoid a constant barrage of incoming asteroids and survive as long as you can.</p>
-          <div class="card-buttons"><a href="https://herawisp.itch.io/hop-till-you-drop" target="_blank" rel="noopener"><img class="pixel-btn" src="https://raw.githubusercontent.com/herawisp/herawisp/main/Button/itchio_icon_button.gif" alt="Play on itch.io"></a></div>
-        </article>
-
-        <article class="card reveal">
-          <h3>Troop Battler</h3>
-          <p>A lane-based Roblox strategy game where you deploy troops into your chosen lane, and each round you pick a card whose perks help you but also strengthen your opponent.</p>
-          <!-- TODO: replace # with the real Roblox game link -->
-          <div class="card-buttons"><a class="btn small" href="#" target="_blank" rel="noopener">Play on Roblox</a></div>
-        </article>
-
-        <article class="card reveal">
-          <h3>Island Survival</h3>
-          <p>A Roblox survival game set on an island, where you gather resources and fight off waves of zombies to make it through each day.</p>
-          <!-- TODO: replace # with the real Roblox game link -->
-          <div class="card-buttons"><a class="btn small" href="#" target="_blank" rel="noopener">Play on Roblox</a></div>
-        </article>
-
-        <article class="card reveal">
-          <h3>Mad Shooter</h3>
-          <p>A Vampire Survivors-style Roblox game made for a one-touch game jam, where you move opposite to your aim while fending off swarms of enemies.</p>
-          <!-- TODO: replace # with the real Roblox game link -->
-          <div class="card-buttons"><a class="btn small" href="#" target="_blank" rel="noopener">Play on Roblox</a></div>
+        <article class="box cream reveal">
+          <div class="bar"><h3>Mad Shooter</h3><a class="sq" href="#" target="_blank" rel="noopener" aria-label="Play Mad Shooter">↗</a></div>
+          <div class="box-body">
+            <p>A Vampire Survivors-style Roblox game made for a one-touch game jam, where you move opposite to your aim while fending off swarms of enemies.</p>
+            <!-- TODO: replace both # links in this box with the real Roblox game link -->
+            <div class="card-buttons"><a class="btn small" href="#" target="_blank" rel="noopener">Play on Roblox</a></div>
+          </div>
         </article>
       </div>
     </section>
 
     <!-- ===== SKILLS ===== -->
     <section class="section" id="skills">
-      <h2 class="heading">My <span class="accent">Skills</span></h2>
+      <h2 class="heading">Skills</h2>
 
-      <div class="skills-grid">
-        <div class="skill-box reveal">
-          <h3><i class="fa-solid fa-gamepad"></i> Game Development</h3>
-          <div class="chips">
+      <div class="grid">
+        <article class="box orange reveal">
+          <div class="bar"><h3><i class="fa-solid fa-gamepad"></i> Game Development</h3></div>
+          <div class="box-body"><div class="chips">
             <span>Unity</span><span>C#</span><span>Procedural Generation</span><span>Pixel Art</span><span>Animation</span><span>Roblox</span>
-          </div>
-        </div>
+          </div></div>
+        </article>
 
-        <div class="skill-box reveal">
-          <h3><i class="fa-solid fa-mobile-screen"></i> Apps &amp; Backend</h3>
-          <div class="chips">
+        <article class="box black reveal">
+          <div class="bar"><h3><i class="fa-solid fa-mobile-screen"></i> Apps &amp; Backend</h3></div>
+          <div class="box-body"><div class="chips">
             <span>Flutter</span><span>TypeScript</span><span>Express</span><span>Prisma</span><span>MySQL</span>
-          </div>
-        </div>
+          </div></div>
+        </article>
 
-        <div class="skill-box reveal">
-          <h3><i class="fa-solid fa-brain"></i> Research</h3>
-          <div class="chips">
+        <article class="box cream reveal">
+          <div class="bar"><h3><i class="fa-solid fa-brain"></i> Research</h3></div>
+          <div class="box-body"><div class="chips">
             <span>Deep Learning</span><span>Image Segmentation</span><span>SAR Imagery</span>
-          </div>
-        </div>
+          </div></div>
+        </article>
 
-        <div class="skill-box reveal">
-          <h3><i class="fa-solid fa-screwdriver-wrench"></i> Tools</h3>
-          <div class="chips">
+        <article class="box black reveal">
+          <div class="bar"><h3><i class="fa-solid fa-screwdriver-wrench"></i> Tools</h3></div>
+          <div class="box-body"><div class="chips">
             <span>Git</span><span>GitHub</span><span>itch.io</span>
-          </div>
-        </div>
+          </div></div>
+        </article>
       </div>
     </section>
 
     <!-- ===== EXPERIENCE ===== -->
     <section class="section" id="experience">
-      <h2 class="heading">My <span class="accent">Experience</span></h2>
+      <h2 class="heading">Experience</h2>
 
-      <div class="timeline">
-        <div class="timeline-item reveal">
-          <h3>Computer Science Student</h3>
-          <span class="meta">BINUS University</span>
-          <p>Studying Computer Science with a focus on game development and software engineering.</p>
-        </div>
+      <div class="stack">
+        <article class="box cream reveal">
+          <div class="bar"><h3>Computer Science Student</h3><span class="sq">01</span></div>
+          <div class="box-body">
+            <span class="meta">BINUS University</span>
+            <p>Studying Computer Science with a focus on game development and software engineering.</p>
+          </div>
+        </article>
 
-        <div class="timeline-item reveal">
-          <h3>Flood Segmentation Research</h3>
-          <span class="meta">Deep Learning Research Project</span>
-          <p>Worked with research teammates on a deep learning approach to flood segmentation using SAR imagery.</p>
-        </div>
+        <article class="box black reveal">
+          <div class="bar"><h3>Flood Segmentation Research</h3><span class="sq">02</span></div>
+          <div class="box-body">
+            <span class="meta">Deep Learning Research Project</span>
+            <p>Worked with research teammates on a deep learning approach to flood segmentation using SAR imagery.</p>
+          </div>
+        </article>
 
-        <div class="timeline-item reveal">
-          <h3>Game Jam Developer</h3>
-          <span class="meta">One-Touch Game Jam</span>
-          <p>Built Mad Shooter, a Vampire Survivors-style game, within the constraints of a one-touch control scheme.</p>
-        </div>
+        <article class="box cream reveal">
+          <div class="bar"><h3>Game Jam Developer</h3><span class="sq">03</span></div>
+          <div class="box-body">
+            <span class="meta">One-Touch Game Jam</span>
+            <p>Built Mad Shooter, a Vampire Survivors-style game, within the constraints of a one-touch control scheme.</p>
+          </div>
+        </article>
 
-        <!-- TODO: add your internships, competitions or other experience here by copying a timeline-item block -->
+        <!-- TODO: add internships, competitions or other experience by copying a box above -->
       </div>
     </section>
 
     <!-- ===== CONTACT ===== -->
-    <section class="section contact" id="contact">
-      <h2 class="heading">Get In <span class="accent">Touch</span></h2>
-      <p class="contact-text">I'm looking for a Unity Developer internship. If you have an opportunity or just want to talk games, feel free to reach out.</p>
-      <div class="contact-links">
-        <a class="btn" href="mailto:YOUR_EMAIL@example.com"><i class="fa-solid fa-envelope"></i> Email Me</a>
-        <a class="btn outline" href="https://github.com/herawisp" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>
-        <a class="btn outline" href="https://herawisp.itch.io" target="_blank" rel="noopener"><i class="fa-brands fa-itch-io"></i> itch.io</a>
-        <a class="btn outline" href="https://www.linkedin.com/in/YOUR-LINKEDIN" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-      </div>
+    <section class="section" id="contact">
+      <h2 class="heading">Get In Touch</h2>
+
+      <article class="box orange contact-box reveal">
+        <div class="bar"><h3>Open for Unity internships</h3><span class="sq">✉</span></div>
+        <div class="box-body">
+          <p>I'm looking for a Unity Developer internship. If you have an opportunity or just want to talk games, feel free to reach out.</p>
+          <div class="contact-links">
+            <a class="btn" href="mailto:YOUR_EMAIL@example.com"><i class="fa-solid fa-envelope"></i> Email Me</a>
+            <a class="btn light" href="https://github.com/herawisp" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>
+            <a class="btn light" href="https://herawisp.itch.io" target="_blank" rel="noopener"><i class="fa-brands fa-itch-io"></i> itch.io</a>
+            <a class="btn light" href="https://www.linkedin.com/in/YOUR-LINKEDIN" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+          </div>
+        </div>
+      </article>
     </section>
   </main>
 
+  <!-- ===== FOOTER ===== -->
   <footer class="footer">
-    <p>&copy; <span id="year"></span> Dicco. Built with HTML, CSS and JavaScript.</p>
+    <div class="giant">DICCO</div>
+    <div class="footer-row">
+      <span>Unity Developer</span>
+      <span>All rights reserved</span>
+      <span>&copy; <span id="year"></span> Dicco</span>
+    </div>
   </footer>
 
   <script src="script.js"></script>
