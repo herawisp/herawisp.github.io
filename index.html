@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="style.css?v=6">
+  <link rel="stylesheet" href="style.css?v=7">
 </head>
 <body>
 
@@ -56,7 +56,7 @@
     <!-- ===== HOME: profile box on the left (1/3), 4 projects on the right (2 columns) ===== -->
     <section class="home" id="home">
 
-      <div class="bento">
+      <div class="bento" id="projects">
 
         <!-- LEFT: profile + description -->
         <article class="box white about">
@@ -81,7 +81,10 @@
               <a href="mailto:YOUR_EMAIL@example.com" aria-label="Email"><span class="ico" data-sprite="images/icon-email.png"><i class="fa-solid fa-envelope"></i></span></a>
             </div>
 
-            <a href="#contact" class="btn alt">Get In Touch</a>
+            <div class="card-buttons">
+              <a href="#contact" class="btn alt">Get In Touch</a>
+              <a href="cv.pdf" download="Dicco-CV.pdf" class="btn light"><span class="ico"><i class="fa-solid fa-download"></i></span>Download CV</a>
+            </div>
           </div>
         </article>
 
@@ -180,56 +183,6 @@
       </div>
     </section>
 
-    <!-- ===== MORE PROJECTS ===== -->
-    <section class="section alt" id="projects">
-      <h2 class="heading">More Projects</h2>
-
-      <div class="grid">
-        <article class="box cyan reveal">
-          <div class="bar"><h3>Wall of Doom</h3><a class="sq" href="https://herawisp.itch.io/wall-of-doom" target="_blank" rel="noopener" aria-label="Play Wall of Doom">↗</a></div>
-          <div class="box-body">
-            <p>A Hole in the Wall-style game where you race to slip through the gap in each oncoming wall before it knocks you off the platform.</p>
-            <div class="card-buttons"><a class="btn small alt" href="https://herawisp.itch.io/wall-of-doom" target="_blank" rel="noopener"><span class="ico" data-sprite="images/icon-itch.png"><i class="fa-brands fa-itch-io"></i></span>Play</a></div>
-          </div>
-        </article>
-
-        <article class="box pink reveal">
-          <div class="bar"><h3>Hop Till You Drop</h3><a class="sq" href="https://herawisp.itch.io/hop-till-you-drop" target="_blank" rel="noopener" aria-label="Play Hop Till You Drop">↗</a></div>
-          <div class="box-body">
-            <p>An arcade dodging game where you leap left or right to avoid a constant barrage of incoming asteroids and survive as long as you can.</p>
-            <div class="card-buttons"><a class="btn small alt" href="https://herawisp.itch.io/hop-till-you-drop" target="_blank" rel="noopener"><span class="ico" data-sprite="images/icon-itch.png"><i class="fa-brands fa-itch-io"></i></span>Play</a></div>
-          </div>
-        </article>
-
-        <article class="box yellow reveal">
-          <div class="bar"><h3>Troop Battler</h3><a class="sq" href="#" target="_blank" rel="noopener" aria-label="Play Troop Battler">↗</a></div>
-          <div class="box-body">
-            <p>A lane-based Roblox strategy game where you deploy troops into your chosen lane, and each round you pick a card whose perks help you but also strengthen your opponent.</p>
-            <!-- TODO: replace both # links in this box with the real Roblox game link -->
-            <div class="card-buttons"><a class="btn small alt" href="#" target="_blank" rel="noopener"><span class="ico" data-sprite="images/icon-roblox.png"><i class="fa-brands fa-roblox"></i></span>Play</a></div>
-          </div>
-        </article>
-
-        <article class="box purple reveal">
-          <div class="bar"><h3>Island Survival</h3><a class="sq" href="#" target="_blank" rel="noopener" aria-label="Play Island Survival">↗</a></div>
-          <div class="box-body">
-            <p>A Roblox survival game set on an island, where you gather resources and fight off waves of zombies to make it through each day.</p>
-            <!-- TODO: replace both # links in this box with the real Roblox game link -->
-            <div class="card-buttons"><a class="btn small alt" href="#" target="_blank" rel="noopener"><span class="ico" data-sprite="images/icon-roblox.png"><i class="fa-brands fa-roblox"></i></span>Play</a></div>
-          </div>
-        </article>
-
-        <article class="box green reveal">
-          <div class="bar"><h3>Mad Shooter</h3><a class="sq" href="#" target="_blank" rel="noopener" aria-label="Play Mad Shooter">↗</a></div>
-          <div class="box-body">
-            <p>A Vampire Survivors-style Roblox game made for a one-touch game jam, where you move opposite to your aim while fending off swarms of enemies.</p>
-            <!-- TODO: replace both # links in this box with the real Roblox game link -->
-            <div class="card-buttons"><a class="btn small alt" href="#" target="_blank" rel="noopener"><span class="ico" data-sprite="images/icon-roblox.png"><i class="fa-brands fa-roblox"></i></span>Play</a></div>
-          </div>
-        </article>
-      </div>
-    </section>
-
     <!-- ===== EXPERIENCE ===== -->
     <section class="section" id="experience">
       <div class="center">
@@ -308,7 +261,6 @@
 
   <!-- ===== FOOTER ===== -->
   <footer class="footer">
-    <div class="giant">DICCO</div>
     <div class="footer-row">
       <span>Unity Developer</span>
       <span>All rights reserved</span>
@@ -316,6 +268,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=6"></script>
+  <script src="script.js?v=7"></script>
 </body>
 </html>

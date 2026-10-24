@@ -379,15 +379,6 @@ a.sq:hover { background: var(--accent); }
   color: var(--accent);
   border-top: 4px solid var(--accent);
 }
-.giant {
-  font-family: var(--font);
-  font-weight: 700;
-  font-size: clamp(5rem, 24vw, 22rem);
-  line-height: 0.95;
-  text-align: center;
-  padding: 1.2rem 0 0.2rem;
-  overflow: hidden;
-}
 .footer-row {
   display: flex;
   justify-content: space-between;
