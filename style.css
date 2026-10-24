@@ -282,10 +282,10 @@ a.sq:hover { background: var(--accent); }
 
 .bento {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));  /* profile = 1 column, projects = 3 columns */
+  grid-template-columns: repeat(3, minmax(0, 1fr));  /* profile = 1 column, projects = 2 columns */
   gap: var(--gap);
 }
-.about { grid-row: 1 / span 2; }
+.about { grid-row: 1 / span 3; }
 
 /* about box content */
 .hero-img {
@@ -397,14 +397,10 @@ a.sq:hover { background: var(--accent); }
 @keyframes rise { from { opacity: 0; transform: translateY(24px); } }
 
 /* ===== RESPONSIVE ===== */
-@media (max-width: 1200px) {
-  .bento { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 991px) {
+  .bento { grid-template-columns: 1fr 1fr; }
   .about { grid-column: 1 / -1; grid-row: auto; }
   .hero-img { max-height: 300px; }
-}
-
-@media (max-width: 900px) {
-  .bento { grid-template-columns: 1fr 1fr; }
 }
 
 @media (max-width: 768px) {
