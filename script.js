@@ -10,6 +10,40 @@ navbar.querySelectorAll("a").forEach((link) =>
   link.addEventListener("click", () => navbar.classList.remove("open"))
 );
 
+// ===== Pixel-art sprite loader =====
+// Any element with data-sprite="path1 path2" tries each path in order.
+// - <img>: swaps in the first file that loads (otherwise keeps its placeholder src)
+// - anything else (icon slot): replaces the temporary icon with the PNG
+function loadSprite(el) {
+  const urls = el.dataset.sprite.trim().split(/\s+/);
+  let i = 0;
+
+  const next = () => {
+    if (i >= urls.length) return; // nothing found: keep the placeholder
+    const url = urls[i++];
+    const probe = new Image();
+
+    probe.onload = () => {
+      if (el.tagName === "IMG") {
+        el.src = url;
+      } else {
+        const img = document.createElement("img");
+        img.className = "sprite";
+        img.alt = "";
+        img.src = url;
+        el.textContent = "";
+        el.appendChild(img);
+        el.classList.add("has-sprite");
+      }
+    };
+    probe.onerror = next;
+    probe.src = url;
+  };
+
+  next();
+}
+document.querySelectorAll("[data-sprite]").forEach(loadSprite);
+
 // ===== Typing effect =====
 const roles = ["Unity Developer", "Game Developer", "Pixel Artist", "CS Student"];
 const typedEl = document.getElementById("typed");
